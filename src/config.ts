@@ -16,11 +16,11 @@ export const apiEndpoints = {
   
   // Broker Outreach endpoints
   brokerOutreach: {
-    drafts: (status: string = '') => `${API_URL}/api/outreach/drafts?status=${status}`,
-    stats: `${API_URL}/api/outreach/stats`,
-    generateBatch: `${API_URL}/api/outreach/generate-batch`,
-    updateDraft: (id: number) => `${API_URL}/api/outreach/drafts/${id}`,
-    sendDraft: (id: number) => `${API_URL}/api/outreach/drafts/${id}/send`,
-    deleteDraft: (id: number) => `${API_URL}/api/outreach/drafts/${id}`,
-  }
+  drafts: (status: string = '') => `${API_URL}/api/outreach/drafts${status ? `?status=${status}` : ''}`,
+  stats: `${API_URL}/api/outreach/stats`,
+  generateBatch: `${API_URL}/api/outreach/generate-batch`,
+  updateDraft: (id: number) => `${API_URL}/api/outreach/drafts/${id}`,
+  sendDraft: (id: number) => `${API_URL}/api/outreach/send/${id}`,
+  deleteDraft: (id: number) => `${API_URL}/api/outreach/drafts/${id}`,
+}
 } as const;
