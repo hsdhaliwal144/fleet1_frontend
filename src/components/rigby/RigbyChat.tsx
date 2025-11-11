@@ -1,5 +1,27 @@
 import { useState } from 'react';
 import { Send, MoreVertical } from 'lucide-react';
+import { useState, useEffect } from 'react';
+
+
+export default function RigbyChat({ metrics: _metrics }: { metrics: any }) {
+  const [input, setInput] = useState('');
+  const [msgs, setMsgs] = useState<Array<{role: 'user' | 'assistant', content: string}>>([
+    {
+      role: 'assistant',
+      content: "Hey, I'm Rigby 👋. Tell me how many trucks you're running and I'll tell you if the numbers make sense.",
+    },
+  ]);
+
+  // 🔍 ADD THIS DEBUG CODE
+  useEffect(() => {
+    console.log('🔴 RigbyChat MOUNTED');
+    return () => console.log('🔴 RigbyChat UNMOUNTED');
+  }, []);
+
+  useEffect(() => {
+    console.log('🟡 Input changed:', input);
+  }, [input]);
+  // END DEBUG CODE
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function RigbyChat({ metrics: _metrics }: { metrics: any }) {

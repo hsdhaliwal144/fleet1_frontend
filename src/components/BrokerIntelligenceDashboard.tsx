@@ -116,7 +116,7 @@ export default function BrokerIntelligenceDashboard() {
   return (
     <div className="broker-intelligence-dashboard">
       <header className="dashboard-header">
-        <h1>🎯 Broker Intelligence Dashboard</h1>
+        <h1>Broker Intelligence Dashboard</h1>
         <button onClick={fetchData} className="refresh-btn">🔄 Refresh</button>
       </header>
 
@@ -144,7 +144,7 @@ export default function BrokerIntelligenceDashboard() {
 
       {/* Priority Loads */}
       <section className="priority-loads-section">
-        <h2>🎯 High Priority Loads (70+ Score)</h2>
+        <h2>High Priority Loads (70+ Score)</h2>
         {priorityLoads.length === 0 ? (
           <p className="no-data">No high priority loads yet. System is collecting data...</p>
         ) : (
